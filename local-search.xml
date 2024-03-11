@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>deepin20.9安装qemu</title>
+    <link href="/2024/03/11/deepin20-9%E5%AE%89%E8%A3%85qemu/"/>
+    <url>/2024/03/11/deepin20-9%E5%AE%89%E8%A3%85qemu/</url>
+    
+    <content type="html"><![CDATA[<p>SourceURL:file:&#x2F;&#x2F;&#x2F;home&#x2F;zy_&#x2F;Documents&#x2F;WPS Cloud Files&#x2F;845999405&#x2F;技术&#x2F;deepin20安装qemu.docx</p><title></title><style>@font-face{font-family:"Times New Roman";}@font-face{font-family:"宋体";}@font-face{font-family:"Symbol";}@font-face{font-family:"Calibri";}@font-face{font-family:"Noto Sans CJK SC";}@list l0:level1{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:36.0000pt;mso-level-number-position:left;margin-left:36.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level2{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:72.0000pt;mso-level-number-position:left;margin-left:72.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level3{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:108.0000pt;mso-level-number-position:left;margin-left:108.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level4{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:144.0000pt;mso-level-number-position:left;margin-left:144.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level5{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:180.0000pt;mso-level-number-position:left;margin-left:180.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level6{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:216.0000pt;mso-level-number-position:left;margin-left:216.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level7{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:252.0000pt;mso-level-number-position:left;margin-left:252.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level8{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:288.0000pt;mso-level-number-position:left;margin-left:288.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l0:level9{mso-level-number-format:bullet;mso-level-suffix:tab;mso-level-text:"";mso-level-tab-stop:324.0000pt;mso-level-number-position:left;margin-left:324.0000pt;text-indent:-18.0000pt;font-family:Symbol;font-size:10.0000pt;}@list l1:level1{mso-level-number-format:decimal;mso-level-suffix:space;mso-level-text:"%1.";mso-level-tab-stop:none;mso-level-number-position:left;margin-left:0.0000pt;text-indent:0.0000pt;font-family:'Times New Roman';}p.MsoNormal{mso-style-name:正文;mso-style-parent:"";margin:0pt;margin-bottom:.0001pt;mso-pagination:none;text-align:justify;text-justify:inter-ideograph;font-family:Calibri;mso-fareast-font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;}span.10{font-family:'Times New Roman';}span.15{font-family:'Times New Roman';color:rgb(0,0,255);text-decoration:underline;text-underline:single;}span.msoIns{mso-style-type:export-only;mso-style-name:"";text-decoration:underline;text-underline:single;color:blue;}span.msoDel{mso-style-type:export-only;mso-style-name:"";text-decoration:line-through;color:red;}@page{mso-page-border-surround-header:no; mso-page-border-surround-footer:no;}@page Section0{margin-top:72.0000pt;margin-bottom:72.0000pt;margin-left:90.0000pt;margin-right:90.0000pt;size:595.3000pt 841.9000pt;layout-grid:15.6000pt;mso-header-margin:42.5500pt;mso-footer-margin:49.6000pt;}div.Section0{page:Section0;}</style><p>deepin20安装qemu</p><p>1. 从github上克隆下来源码</p><p>git clone <a href="https://github.com/qemu/qemu.git">GitHub - qemu&#x2F;qemu: Official QEMU mirror. Please see https://www.qemu.org/contribute/ for how to submit changes to QEMU. Pull Requests are ignored. Please only use release tarballs from the QEMU website.</a></p><p>2. 进入到cd qemu目录底下</p><p>3. 执行配置</p><p>.&#x2F;configure –enable-kvm –enable-debug –enable-vnc –enable-werror  –target-list&#x3D;”x86_64-softmmu”</p><p>遇到错误:</p><p> </p><p>缺失工具,安装工具</p><p>pip install sphinx&#x3D;&#x3D;5.3.0</p><p>pip install –upgrade sphinx</p><p>sudo apt-get install ninja-build</p><p> </p><p> </p><p>大概率是系统缺少 pixman像素库:</p><p>sudo apt-get install libpixman-1-0 libpixman-1-dev、</p><p>至此，.&#x2F;configuration执行成功</p><p> </p><p>4. 执行编译 安装 sudo make -j10 &amp; sudo make install</p><p> </p><p> </p><p>5. 安装完毕后&#x2F;usr&#x2F;local&#x2F;bin底下出现</p><p> </p><p>· ivshmem-client&#x2F;server：这是一个 guest 和 host 共享内存的应用程序，遵循 C&#x2F;S 的架构。</p><p>· qemu-ga：这是一个不利用网络实现 guest 和 host 之间交互的应用程序（使用 virtio-serial），运行在 guest 中。</p><p>· qemu-io：这是一个执行 Qemu I&#x2F;O 操作的命令行工具。</p><p>· qemu-system-x86_64：Qemu 的核心应用程序，虚拟机就由它创建的。</p><p>· qemu-img：创建虚拟机镜像文件的工具，下面有例子说明。</p><p>· qemu-nbd：磁盘挂载工具。</p><p>此时qemu的安装已全部结束！  恭喜你!</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>test</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="/2024/03/11/My-New-Post/"/>
+    <url>/2024/03/11/My-New-Post/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/03/11/hello-world/"/>
+    <url>/2024/03/11/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
